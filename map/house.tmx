@@ -147,7 +147,7 @@
 </data>
  </layer>
  <objectgroup id="7" name="Calque d'Objets 1">
-  <object id="23" name="spawn_house" x="159.863" y="312.838">
+  <object id="23" name="spawn_house" x="159.863" y="320.216">
    <point/>
   </object>
   <object id="24" name="exit_house" x="145.597" y="322.184" width="27.5455" height="11.3133"/>
