@@ -29,7 +29,10 @@ class MapManager:
 
         self.register_map("world", portals=[
             Portal(from_world="world", origin_point="enter_house", target_world="house", teleport_point="spawn_house"),
-            Portal(from_world="world", origin_point="enter_house2", target_world="house2", teleport_point="spawn_house")
+            Portal(from_world="world", origin_point="enter_house2", target_world="house2", teleport_point="spawn_house"),
+            Portal(from_world="world", origin_point="enter_house3", target_world="house3", teleport_point="spawn_house"),
+            Portal(from_world="world", origin_point="enter_house4", target_world="house4", teleport_point="spawn_house"),
+            Portal(from_world="world", origin_point="enter_house5", target_world="house5", teleport_point="spawn_house")
         ])
         self.register_map("house", portals=[
             Portal(from_world="house", origin_point="exit_house", target_world="world", teleport_point="enter_house_exit")
@@ -37,6 +40,18 @@ class MapManager:
         self.register_map("house2", portals=[
             Portal(from_world="house2", origin_point="exit_house", target_world="world",
                    teleport_point="exit_house2")
+        ])
+        self.register_map("house3", portals=[
+            Portal(from_world="house3", origin_point="exit_house", target_world="world",
+                   teleport_point="exit_house3")
+        ])
+        self.register_map("house4", portals=[
+            Portal(from_world="house4", origin_point="exit_house", target_world="world",
+                   teleport_point="exit_house4")
+        ])
+        self.register_map("house5", portals=[
+            Portal(from_world="house5", origin_point="exit_house", target_world="world",
+                   teleport_point="exit_house5")
         ])
         self.teleport_player("player")
 

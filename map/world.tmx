@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.5" tiledversion="1.7.2" orientation="orthogonal" renderorder="right-down" width="50" height="50" tilewidth="16" tileheight="16" infinite="0" nextlayerid="11" nextobjectid="75">
+<map version="1.5" tiledversion="1.7.2" orientation="orthogonal" renderorder="right-down" width="50" height="50" tilewidth="16" tileheight="16" infinite="0" nextlayerid="11" nextobjectid="81">
  <tileset firstgid="1" source="nature.tsx"/>
  <tileset firstgid="721" source="house.tsx"/>
  <layer id="1" name="background" width="50" height="50">
@@ -372,10 +372,10 @@
   <object id="52" type="collision" x="535" y="59.5" width="17.5" height="16.5"/>
   <object id="53" type="collision" x="617.5" y="127.5" width="11.5" height="12"/>
   <object id="54" type="collision" x="715" y="143" width="11" height="13.5"/>
-  <object id="60" type="collision" x="45.8333" y="64" width="70.6667" height="54"/>
+  <object id="60" type="collision" x="45.8333" y="64" width="70.6667" height="49.5"/>
   <object id="62" type="collision" x="397.273" y="152.515" width="69.5455" height="43.0909"/>
   <object id="64" type="collision" x="687.5" y="207.5" width="70.5" height="53.5"/>
-  <object id="65" type="collision" x="415.5" y="657.5" width="70.5" height="52"/>
+  <object id="65" type="collision" x="415.5" y="657.5" width="70.5" height="49"/>
   <object id="68" type="collision" x="60.6667" y="321.333" width="90.3495" height="33.6667"/>
   <object id="69" name="enter_house" x="409.864" y="178.802" width="14.9091" height="20.5455"/>
   <object id="70" name="enter_house_exit" x="416.789" y="209.378">
@@ -385,5 +385,17 @@
    <point/>
   </object>
   <object id="74" name="enter_house2" x="73.5" y="340.5" width="14.5" height="18.5"/>
+  <object id="75" name="enter_house3" x="58" y="96.5" width="15" height="23.5"/>
+  <object id="76" name="exit_house3" x="66" y="131.5">
+   <point/>
+  </object>
+  <object id="77" name="enter_house4" x="698" y="241" width="15" height="23.5"/>
+  <object id="78" name="exit_house4" x="704.5" y="275.5">
+   <point/>
+  </object>
+  <object id="79" name="enter_house5" x="426" y="689.5" width="14.5" height="21.5"/>
+  <object id="80" name="exit_house5" x="433.5" y="724">
+   <point/>
+  </object>
  </objectgroup>
 </map>
