@@ -32,7 +32,8 @@ class MapManager:
             Portal(from_world="world", origin_point="enter_house2", target_world="house2", teleport_point="spawn_house"),
             Portal(from_world="world", origin_point="enter_house3", target_world="house3", teleport_point="spawn_house"),
             Portal(from_world="world", origin_point="enter_house4", target_world="house4", teleport_point="spawn_house"),
-            Portal(from_world="world", origin_point="enter_house5", target_world="house5", teleport_point="spawn_house")
+            Portal(from_world="world", origin_point="enter_house5", target_world="house5", teleport_point="spawn_house"),
+            Portal(from_world="world", origin_point="enter_dungeon", target_world="dungeon", teleport_point="spawn_dungeon")
         ])
         self.register_map("house", portals=[
             Portal(from_world="house", origin_point="exit_house", target_world="world", teleport_point="enter_house_exit")
@@ -53,6 +54,9 @@ class MapManager:
             Portal(from_world="house5", origin_point="exit_house", target_world="world",
                    teleport_point="exit_house5")
         ])
+        self.register_map("dungeon", portals=[
+            Portal(from_world="dungeon", origin_point="dungeon_exit", target_world="world",
+                   teleport_point="exit_dungeon_spawn_point")])
         self.teleport_player("player")
 
     def check_collision(self):
@@ -93,7 +97,7 @@ class MapManager:
                 walls.append(pygame.Rect(obj.x, obj.y, obj.width, obj.height))
 
         # dessiner le groupe de calques
-        group = pyscroll.PyscrollGroup(map_layer=map_layer, default_layer=5)
+        group = pyscroll.PyscrollGroup(map_layer=map_layer, default_layer=6)
         group.add(self.player)
 
         # creer un objet map
