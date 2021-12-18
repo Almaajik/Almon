@@ -15,7 +15,7 @@ class Game:
         pygame.display.set_caption("Almon - Aventure")
 
         # generer un joueur
-        self.player = Player(0, 0)
+        self.player = Player()
         self.map_manager = MapManager(self.screen, self.player)
 
     def handle_input(self):
@@ -24,13 +24,13 @@ class Game:
         if pressed[pygame.K_ESCAPE]:
             self.running = False
         elif pressed[pygame.K_UP]:
-            self.player.move_player("up")
+            self.player.move_up()
         elif pressed[pygame.K_DOWN]:
-            self.player.move_player("down")
+            self.player.move_down()
         elif pressed[pygame.K_RIGHT]:
-            self.player.move_player("right")
+            self.player.move_right()
         elif pressed[pygame.K_LEFT]:
-            self.player.move_player("left")
+            self.player.move_left()
 
     def update(self):
         self.map_manager.update()
