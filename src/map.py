@@ -1,6 +1,7 @@
 from dataclasses import dataclass
 import pygame, pytmx, pyscroll
 
+from src import dialog
 from src.player import NPC
 
 
@@ -43,8 +44,8 @@ class MapManager:
             Portal(from_world="world", origin_point="enter_dungeon", target_world="dungeon",
                    teleport_point="spawn_dungeon")
         ], npcs=[
-            NPC("paul", nb_points=4),
-            NPC("robin", nb_points=2)
+            NPC("paul", nb_points=4, dialog=["Bonjour jeune avanturier", "Que viens tu faire par ici ?", "Tu t'es perdu ?", "Bonne chance!"]),
+            NPC("robin", nb_points=2, dialog=["Aide nous!", "Il y a une créature dans le donjon", "Débarasse nous d'elle!"])
         ])
         self.register_map("house", portals=[
             Portal(from_world="house", origin_point="exit_house", target_world="world",
@@ -70,10 +71,15 @@ class MapManager:
             Portal(from_world="dungeon", origin_point="dungeon_exit", target_world="world",
                    teleport_point="exit_dungeon_spawn_point")
         ], npcs=[
-            NPC("boss", nb_points=1)
+            NPC("boss", nb_points=1, dialog=["Qui est tu vermine ?", "Tu oses m'affronter?", "MEUUUR!"])
         ])
         self.teleport_player("player")
         self.teleport_npcs()
+
+    def check_npc_collisions(self, dialog_box):
+        for sprite in self.get_group().sprites():
+            if sprite.feet.colliderect(self.player.rect) and type(sprite) is NPC:
+                dialog_box.execute(sprite.dialog)
 
     def check_collision(self):
         # portails
